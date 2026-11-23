@@ -1,0 +1,8 @@
+{
+  "name": "WELSTENFORDE",
+  "short_name": "WELSTENFORDE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#292929"
+}

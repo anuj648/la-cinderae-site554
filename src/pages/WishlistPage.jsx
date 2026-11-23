@@ -1,0 +1,9 @@
+import React, {useEffect,useState} from 'react';
+import {products,toggleWish,addCart} from '../legacy/commerce.js';
+import {productImage} from '../image-settings/productImages.js';
+export default function WishlistPage(){
+ const [ids,setIds]=useState([]);
+ useEffect(()=>{const update=()=>{try{setIds(JSON.parse(localStorage.getItem('lc-wish')||'[]')||[])}catch{setIds([])}};update();window.addEventListener('lc-commerce-change',update);return()=>window.removeEventListener('lc-commerce-change',update)},[]);
+ const saved=products.filter(p=>ids.includes(p.id));
+ return <div className="page-content"><section className="page-hero"><div className="eyebrow">Saved with intention</div><h1 className="page-title">My Wishlist</h1></section><section className="section container">{saved.length?<div className="product-grid">{saved.map(p=><article className="product-card" key={p.id}><a href={`product-details.html?id=${p.id}`}><div className="product-image"><img loading="lazy" src={productImage(p.id,0,`https://images.unsplash.com/${p.img}?auto=format&fit=crop&w=700&q=85`)} alt={p.name}/></div></a><div className="product-info"><div><h3><a href={`product-details.html?id=${p.id}`}>{p.name}</a></h3><p>{p.cat}</p></div><span className="price">₹{p.price.toLocaleString('en-IN')}</span></div><button className="wish-btn is-saved" aria-label="Remove from wishlist" onClick={e=>toggleWish(p.id,e.currentTarget)}>♥</button><div className="lc-card-actions"><button onClick={()=>addCart(p.id)}>Add to Bag</button><button onClick={()=>{addCart(p.id);location.href='shopping-bag.html'}}>View Bag</button></div></article>)}</div>:<div className="empty"><h2>Keep the pieces you love close.</h2><p>Your wishlist is waiting for its first addition.</p><a className="btn" href="shop-all.html">Explore pieces</a></div>}</section></div>
+}

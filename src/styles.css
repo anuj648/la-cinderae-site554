@@ -1,0 +1,46 @@
+/* React entry point. The original WELSTENFORDE design system is preserved in public/assets/css/style.css. */
+
+/* Product detail: single large swipeable image, no thumbnail rail */
+.lc-gallery.wel-gallery{display:block!important;min-width:0}.wel-gallery .wel-main-image{position:relative;width:100%;touch-action:pan-y;overflow:hidden}.wel-gallery .wel-main-image>img{width:100%;height:auto;max-height:78vh;object-fit:contain;display:block;user-select:none}.wel-gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;background:rgba(255,255,255,.86);border:1px solid #ddd;color:#171717;width:42px;height:48px;cursor:pointer;font-size:30px;line-height:1}.wel-prev{left:8px}.wel-next{right:8px}.wel-image-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.82);font:12px Manrope,sans-serif;padding:5px 12px}.wel-colour-options{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 20px}.wel-colour-options button{background:white;border:1px solid #ccc;padding:9px 14px;cursor:pointer}.wel-colour-options button.active{border-color:#111}@media(max-width:700px){.wel-gallery .wel-main-image>img{max-height:68vh}.wel-gallery-arrow{width:34px;height:42px;font-size:25px}}
+
+/* Video-style horizontal product photo swipe, preserving original editorial product layout. */
+.wel-gallery .wel-main-image{touch-action:pan-y;overflow:hidden;user-select:none}
+.wel-swipe-track{display:flex;width:100%;will-change:transform}
+.wel-swipe-slide{flex:0 0 100%;min-width:0;display:flex;align-items:center;justify-content:center}
+.wel-gallery .wel-swipe-slide img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain;pointer-events:none;user-select:none}
+@media(max-width:700px){.wel-gallery .wel-swipe-slide img{max-height:68vh}}
+
+/* Reference-style product image gallery across all products */
+.wel-gallery .wel-main-image{background:#e5e4e0;position:relative}
+.wel-gallery .wel-swipe-slide{height:min(76vh,760px)}
+.wel-gallery .wel-swipe-slide img{width:100%;height:100%;max-height:none;object-fit:contain}
+.wel-gallery-dots{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:6}
+.wel-gallery-dots button{display:block;width:10px;height:10px;padding:0;border:0;border-radius:50%;background:#b9b9b9;cursor:pointer}
+.wel-gallery-dots button.active{background:#171717}
+.wel-gallery-arrow{border:0;background:rgba(255,255,255,.93);width:45px;height:54px}
+@media(max-width:700px){.lc-detail{display:block!important}.lc-gallery.wel-gallery{width:100%!important}.wel-gallery .wel-swipe-slide{height:min(78vh,670px)}.wel-gallery .wel-swipe-slide img{height:100%;max-height:none}.wel-gallery-arrow{width:38px;height:48px}.wel-gallery-dots{gap:9px;bottom:15px}.wel-gallery-dots button{width:9px;height:9px}.lc-detail-copy{padding-top:28px}}
+
+/* Product gallery: visible controls, swipe, and a genuine crop of the same photo when only one photo exists */
+.wel-gallery .wel-main-image{touch-action:pan-y;position:relative;overflow:hidden}
+.wel-gallery .wel-swipe-track{display:flex;width:100%;transform-origin:left center}
+.wel-gallery .wel-swipe-slide{flex:0 0 100%;overflow:hidden}
+.wel-gallery .wel-swipe-slide.wel-closeup img{transform:scale(1.35);transform-origin:center 43%}
+.wel-gallery .wel-gallery-arrow{display:flex!important;align-items:center;justify-content:center;visibility:visible!important;opacity:1!important;z-index:20!important;position:absolute!important;top:50%;background:#fff;color:#171717;border:0;box-shadow:0 1px 6px #0001}
+.wel-gallery .wel-gallery-dots{z-index:20;position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:9px}
+.wel-gallery .wel-gallery-dots button{background:#aaa;border:0;border-radius:50%;width:9px;height:9px;padding:0;cursor:pointer}
+.wel-gallery .wel-gallery-dots button.active{background:#171717}
+
+/* Uniform four-position swipe gallery: eliminates top/bottom blank strips. */
+.lc-gallery.wel-gallery .wel-main-image{height:auto!important;aspect-ratio:1 / 1.04!important;background:#e5e4e0!important;overflow:hidden!important;touch-action:pan-y!important}
+.lc-gallery.wel-gallery .wel-swipe-track{height:100%!important;align-items:stretch!important}
+.lc-gallery.wel-gallery .wel-swipe-slide{height:100%!important;min-height:0!important;align-items:stretch!important;background:#e5e4e0!important}
+.lc-gallery.wel-gallery .wel-swipe-slide img{height:100%!important;width:100%!important;max-height:none!important;object-fit:cover!important;object-position:center center!important;transform:none!important}
+.lc-gallery.wel-gallery .wel-swipe-slide.wel-crop-1 img{transform:scale(1.13)!important;object-position:center center!important}
+.lc-gallery.wel-gallery .wel-swipe-slide.wel-crop-2 img{transform:scale(1.3)!important;transform-origin:50% 32%!important}
+.lc-gallery.wel-gallery .wel-swipe-slide.wel-crop-3 img{transform:scale(1.35)!important;transform-origin:50% 70%!important}
+.lc-gallery.wel-gallery .wel-gallery-arrow{top:50%!important;transform:translateY(-50%)!important}
+.lc-gallery.wel-gallery .lc-main-wish{z-index:22!important}
+@media(max-width:700px){.lc-gallery.wel-gallery .wel-main-image{aspect-ratio:1 / 1.08!important}}
+
+/* WELSTENFORDE refined global identity */
+body{background:#f5f0e9} .wf-sticky-site-header{position:sticky;top:0;z-index:9999}.wf-sticky-site-header .header{background:rgba(245,240,233,.96)!important;backdrop-filter:blur(20px);border-bottom:1px solid rgba(85,62,42,.12)}.wf-sticky-site-header .brand{font-family:Georgia,serif;letter-spacing:.2em;font-weight:400!important}.wf-sticky-site-header .nav{background:#f5f0e9!important}.wf-sticky-site-header .nav a{font-size:10px;letter-spacing:.15em}.wf-sticky-site-header .head-actions button{color:#30251e}.wf-sticky-site-header .nav a:nth-child(1),.wf-sticky-site-header .nav a:nth-child(5),.wf-sticky-site-header .nav a:nth-child(6),.wf-sticky-site-header .nav a:nth-child(7),.wf-sticky-site-header .nav a:nth-child(8){display:none}@media(max-width:720px){.wf-sticky-site-header .mobile-nav a{display:block!important}}

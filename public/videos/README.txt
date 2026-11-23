@@ -1,0 +1,1 @@
+Add your licensed 6–12 second fashion campaign video as welstenforde-campaign.mp4 in this folder. Until then, the homepage displays the existing campaign poster image. Video should be H.264 MP4, muted and seamlessly loopable.

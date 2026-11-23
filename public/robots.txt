@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /shopping-bag.html
+Disallow: /my-account.html
+Disallow: /wishlist.html
+Disallow: /sign-in.html
+Disallow: /create-account.html
+# Add Sitemap: https://your-live-domain.example/sitemap.xml after domain configuration

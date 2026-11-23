@@ -1,0 +1,1 @@
+Vercel deployment: import the la-cinderae-site folder as project root (or set Root Directory to la-cinderae-site). Framework: Vite. Build command: npm run build. Output: dist. Redeploy after uploading this version. vercel.json rewrites SPA routes to index.html.

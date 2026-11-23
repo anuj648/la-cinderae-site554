@@ -1,0 +1,1 @@
+Paste your JPG, PNG, or WebP photos into this folder. Then edit src/image-settings/siteImages.js or productImages.js.

@@ -1,0 +1,1 @@
+WELSTENFORDE: Product cards expanded to at least 15 across existing shopping catalogue pages. Add to Bag and Wishlist use existing localStorage persistence (lc-cart and lc-wish). Product imagery can be changed via src/image-settings/productImages.js. Lookbook retains 8 editorial looks as designed. Existing pages and layout remain intact.
